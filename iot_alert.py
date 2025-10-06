@@ -2,14 +2,18 @@ import random
 import time
 import smtplib
 from email.mime.text import MIMEText
+from dotenv import load_dotenv
+import os
+
+load_dotenv() 
 
 SEUIL_TEMP = 30
 SEUIL_MOTION = 1
 ALERT_INTERVAL = 10
 
-SENDER_EMAIL = "meminsidi2@gmail.com"
-RECIPIENT_EMAIL = "M2lemine.sd@gmail.com"
-EMAIL_PASSWORD = "pglg ndme qydb qayc"
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
+EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 
 last_alert_time = 0
 
